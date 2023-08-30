@@ -6,22 +6,24 @@
   <meta name="keywords" content=" adb ">
   <meta name="description" content="ADB用法大全 | Scha1e的小站">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="简介5555是Android系统的默认远程无线调试端口，一般用于开发者进行远程调试。而在一些Android设备中该端口默认开放，从而使得攻击者在接入了内部网络后可以远程控制Android设备。本次实验使用Lenovo的某款智能屏。目前市面上智能屏大多是 AndroidTV，由于Android原生代码中并没有开启身份认证和登录功能，厂商也对智能电视源代码没进行修改添加身份认证功能，而且通过最高权限的">
+<meta name="description" content="简介电信的部分光猫后台存在越权访问漏洞，可以通过拼接url读取配置文件解包获取超管密码。此外也可直接使用该地区光猫设备型号的默认密码。 复现过程 访问网关访问电信天翼默认网关192.168.1.1，重定向至登录界面。  输入默认的超级管理员密码：nE7jA%5m  获得后台控制权  可以看到我们成功登录光猫后台，得知该型号为TEWA-1100E。 进一步，我们可以获取到内网内所有终端的接入信息，包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安卓设备远程调试漏洞">
-<meta property="og:url" content="http://example.com/2023/08/29/%E5%AE%89%E5%8D%93%E8%AE%BE%E5%A4%87%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:title" content="电信光猫的弱口令漏洞">
+<meta property="og:url" content="http://example.com/2023/08/30/%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E5%BC%B1%E5%8F%A3%E4%BB%A4%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="Scha1e的小站">
-<meta property="og:description" content="简介5555是Android系统的默认远程无线调试端口，一般用于开发者进行远程调试。而在一些Android设备中该端口默认开放，从而使得攻击者在接入了内部网络后可以远程控制Android设备。本次实验使用Lenovo的某款智能屏。目前市面上智能屏大多是 AndroidTV，由于Android原生代码中并没有开启身份认证和登录功能，厂商也对智能电视源代码没进行修改添加身份认证功能，而且通过最高权限的">
+<meta property="og:description" content="简介电信的部分光猫后台存在越权访问漏洞，可以通过拼接url读取配置文件解包获取超管密码。此外也可直接使用该地区光猫设备型号的默认密码。 复现过程 访问网关访问电信天翼默认网关192.168.1.1，重定向至登录界面。  输入默认的超级管理员密码：nE7jA%5m  获得后台控制权  可以看到我们成功登录光猫后台，得知该型号为TEWA-1100E。 进一步，我们可以获取到内网内所有终端的接入信息，包">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://p.inari.site/guest/23-08/29/64edf55e0bbeb.png">
-<meta property="og:image" content="https://p.inari.site/guest/23-08/29/64edf5eeb5fc1.png">
-<meta property="og:image" content="https://p.inari.site/guest/23-08/29/64edf62f0fbe4.png">
-<meta property="article:published_time" content="2023-08-29T13:36:35.000Z">
-<meta property="article:modified_time" content="2023-08-29T14:06:38.245Z">
+<meta property="og:image" content="https://s2.loli.net/2023/08/30/jMsyS9Yogw7PqG1.png">
+<meta property="og:image" content="https://s2.loli.net/2023/08/30/rG8p15NsnEkZVWF.png">
+<meta property="og:image" content="https://s2.loli.net/2023/08/30/AkbmO65dgIHESPT.png">
+<meta property="og:image" content="https://s2.loli.net/2023/08/30/frgoRvFPLdV6CSO.png">
+<meta property="og:image" content="https://s2.loli.net/2023/08/30/gVb9xPBCsov5NkS.png">
+<meta property="article:published_time" content="2023-08-30T12:07:42.000Z">
+<meta property="article:modified_time" content="2023-08-30T12:22:35.562Z">
 <meta property="article:author" content="Scha1e">
-<meta property="article:tag" content="adb 无线调试">
+<meta property="article:tag" content="内网 光猫">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://p.inari.site/guest/23-08/29/64edf55e0bbeb.png">
+<meta name="twitter:image" content="https://s2.loli.net/2023/08/30/jMsyS9Yogw7PqG1.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -132,7 +134,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(3)</small>
+                <small>(4)</small>
             
         </div>
     </li>
@@ -167,6 +169,21 @@
             
         
     
+        
+            
+                
+    <li>
+        <div data-rel="网络">
+            
+            网络
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -180,8 +197,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="3">
-<input type="hidden" id="yelog_site_word_count" value="14.9k">
+<input type="hidden" id="yelog_site_posts_number" value="4">
+<input type="hidden" id="yelog_site_word_count" value="15.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -229,6 +246,10 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>内网 光猫</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>adb</a>
             </li>
         
@@ -254,6 +275,15 @@
     </div>
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 网络 "
+           href="/2023/08/30/%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E5%BC%B1%E5%8F%A3%E4%BB%A4%E6%BC%8F%E6%B4%9E/"
+           data-tag="内网 光猫"
+           data-author="" >
+            <span class="post-title" title="电信光猫的弱口令漏洞">电信光猫的弱口令漏洞</span>
+            <span class="post-date" title="2023-08-30 20:07:42">2023/08/30</span>
+        </a>
         
         
         <a  class="全部文章 Android "

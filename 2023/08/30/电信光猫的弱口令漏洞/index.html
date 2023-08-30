@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Scha1e的小站</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Scha1e的小站">
+  <title>电信光猫的弱口令漏洞 | Scha1e的小站</title>
+  <meta name="keywords" content=" 内网 光猫 ">
+  <meta name="description" content="电信光猫的弱口令漏洞 | Scha1e的小站">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="简介电信的部分光猫后台存在越权访问漏洞，可以通过拼接url读取配置文件解包获取超管密码。此外也可直接使用该地区光猫设备型号的默认密码。 复现过程 访问网关访问电信天翼默认网关192.168.1.1，重定向至登录界面。  输入默认的超级管理员密码：nE7jA%5m  获得后台控制权  可以看到我们成功登录光猫后台，得知该型号为TEWA-1100E。 进一步，我们可以获取到内网内所有终端的接入信息，包">
 <meta property="og:type" content="article">
@@ -63,7 +63,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -328,12 +328,60 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-电信光猫的弱口令漏洞" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Scha1e%E7%9A%84%E5%B0%8F%E7%AB%99"><span class="toc-text">Scha1e的小站</span></a></li></ol>
+        <h1 class="article-title">电信光猫的弱口令漏洞</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="网络">网络</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">内网 光猫</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2023-08-30 20:22:35'>2023-08-30 20:07</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:299</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="toc-text">复现过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3"><span class="toc-text">安全隐患</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E5%BB%BA%E8%AE%AE"><span class="toc-text">修复建议</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -346,13 +394,56 @@
     }
 </style>
 </div>
-            <h1 id="Scha1e的小站"><a href="#Scha1e的小站" class="headerlink" title="Scha1e的小站"></a>Scha1e的小站</h1><p><img src="https://p.inari.site/guest/23-08/28/64ec977c8cc11.png"></p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>电信的部分光猫后台存在越权访问漏洞，可以通过拼接url读取配置文件解包获取超管密码。此外也可直接使用该地区光猫设备型号的默认密码。</p>
+<h2 id="复现过程"><a href="#复现过程" class="headerlink" title="复现过程"></a>复现过程</h2><ol>
+<li>访问网关<br>访问电信天翼默认网关192.168.1.1，重定向至登录界面。<br><img src="https://s2.loli.net/2023/08/30/jMsyS9Yogw7PqG1.png"></li>
+</ol>
+<p>输入默认的超级管理员密码：<code>nE7jA%5m</code></p>
+<ol start="2">
+<li>获得后台控制权</li>
+</ol>
+<p>可以看到我们成功登录光猫后台，得知该型号为TEWA-1100E。<br><img src="https://s2.loli.net/2023/08/30/rG8p15NsnEkZVWF.png"></p>
+<p>进一步，我们可以获取到内网内所有终端的接入信息，包括设备名称、MAC地址、DHCP分配的IP地址、设备类型等。<br><img src="https://s2.loli.net/2023/08/30/AkbmO65dgIHESPT.png"></p>
+<p>其次，我们可以获取到网络账号的关键信息，包括拨号用户名及密码。<br><img src="https://s2.loli.net/2023/08/30/frgoRvFPLdV6CSO.png"></p>
+<p>同时，我们具有权限对光猫进行各种管理，包括恢复出厂设置、重启设备等。<br><img src="https://s2.loli.net/2023/08/30/gVb9xPBCsov5NkS.png"></p>
+<h2 id="安全隐患"><a href="#安全隐患" class="headerlink" title="安全隐患"></a>安全隐患</h2><ol>
+<li>可能造成大规模网络瘫痪</li>
+<li>网络设备可能受到监控</li>
+<li>内网设备可能被植入木马病毒等</li>
+</ol>
+<h2 id="修复建议"><a href="#修复建议" class="headerlink" title="修复建议"></a>修复建议</h2><p>结合防火墙隔离用户网络，防止用户直接访问网关。</p>
 
-        </article>
-        
-        
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>电信光猫的弱口令漏洞</p>
+    <p><span class="copy-title">字数:</span><span class="post-count">299</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="Scha1e">Scha1e</a></p>
+    <p><span class="copy-title">发布时间:</span>2023-08-30, 20:07:42</p>
+    <p><span class="copy-title">最后更新:</span>2023-08-30, 20:22:35</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/08/30/%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E5%BC%B1%E5%8F%A3%E4%BB%A4%E6%BC%8F%E6%B4%9E/" title="电信光猫的弱口令漏洞">http://example.com/2023/08/30/%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E5%BC%B1%E5%8F%A3%E4%BB%A4%E6%BC%8F%E6%B4%9E/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -361,11 +452,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>

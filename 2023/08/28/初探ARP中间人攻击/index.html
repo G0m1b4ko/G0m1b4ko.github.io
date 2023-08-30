@@ -6,22 +6,24 @@
   <meta name="keywords" content=" 内网 , ARP , MITM ">
   <meta name="description" content="初探ARP中间人攻击 | Scha1e的小站">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="简介5555是Android系统的默认远程无线调试端口，一般用于开发者进行远程调试。而在一些Android设备中该端口默认开放，从而使得攻击者在接入了内部网络后可以远程控制Android设备。本次实验使用Lenovo的某款智能屏。目前市面上智能屏大多是 AndroidTV，由于Android原生代码中并没有开启身份认证和登录功能，厂商也对智能电视源代码没进行修改添加身份认证功能，而且通过最高权限的">
+<meta name="description" content="简介电信的部分光猫后台存在越权访问漏洞，可以通过拼接url读取配置文件解包获取超管密码。此外也可直接使用该地区光猫设备型号的默认密码。 复现过程 访问网关访问电信天翼默认网关192.168.1.1，重定向至登录界面。  输入默认的超级管理员密码：nE7jA%5m  获得后台控制权  可以看到我们成功登录光猫后台，得知该型号为TEWA-1100E。 进一步，我们可以获取到内网内所有终端的接入信息，包">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安卓设备远程调试漏洞">
-<meta property="og:url" content="http://example.com/2023/08/29/%E5%AE%89%E5%8D%93%E8%AE%BE%E5%A4%87%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:title" content="电信光猫的弱口令漏洞">
+<meta property="og:url" content="http://example.com/2023/08/30/%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E5%BC%B1%E5%8F%A3%E4%BB%A4%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="Scha1e的小站">
-<meta property="og:description" content="简介5555是Android系统的默认远程无线调试端口，一般用于开发者进行远程调试。而在一些Android设备中该端口默认开放，从而使得攻击者在接入了内部网络后可以远程控制Android设备。本次实验使用Lenovo的某款智能屏。目前市面上智能屏大多是 AndroidTV，由于Android原生代码中并没有开启身份认证和登录功能，厂商也对智能电视源代码没进行修改添加身份认证功能，而且通过最高权限的">
+<meta property="og:description" content="简介电信的部分光猫后台存在越权访问漏洞，可以通过拼接url读取配置文件解包获取超管密码。此外也可直接使用该地区光猫设备型号的默认密码。 复现过程 访问网关访问电信天翼默认网关192.168.1.1，重定向至登录界面。  输入默认的超级管理员密码：nE7jA%5m  获得后台控制权  可以看到我们成功登录光猫后台，得知该型号为TEWA-1100E。 进一步，我们可以获取到内网内所有终端的接入信息，包">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://p.inari.site/guest/23-08/29/64edf55e0bbeb.png">
-<meta property="og:image" content="https://p.inari.site/guest/23-08/29/64edf5eeb5fc1.png">
-<meta property="og:image" content="https://p.inari.site/guest/23-08/29/64edf62f0fbe4.png">
-<meta property="article:published_time" content="2023-08-29T13:36:35.000Z">
-<meta property="article:modified_time" content="2023-08-29T14:06:38.245Z">
+<meta property="og:image" content="https://s2.loli.net/2023/08/30/jMsyS9Yogw7PqG1.png">
+<meta property="og:image" content="https://s2.loli.net/2023/08/30/rG8p15NsnEkZVWF.png">
+<meta property="og:image" content="https://s2.loli.net/2023/08/30/AkbmO65dgIHESPT.png">
+<meta property="og:image" content="https://s2.loli.net/2023/08/30/frgoRvFPLdV6CSO.png">
+<meta property="og:image" content="https://s2.loli.net/2023/08/30/gVb9xPBCsov5NkS.png">
+<meta property="article:published_time" content="2023-08-30T12:07:42.000Z">
+<meta property="article:modified_time" content="2023-08-30T12:22:35.562Z">
 <meta property="article:author" content="Scha1e">
-<meta property="article:tag" content="adb 无线调试">
+<meta property="article:tag" content="内网 光猫">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://p.inari.site/guest/23-08/29/64edf55e0bbeb.png">
+<meta name="twitter:image" content="https://s2.loli.net/2023/08/30/jMsyS9Yogw7PqG1.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -132,7 +134,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(3)</small>
+                <small>(4)</small>
             
         </div>
     </li>
@@ -167,6 +169,21 @@
             
         
     
+        
+            
+                
+    <li>
+        <div data-rel="网络">
+            
+            网络
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -180,8 +197,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="3">
-<input type="hidden" id="yelog_site_word_count" value="14.9k">
+<input type="hidden" id="yelog_site_posts_number" value="4">
+<input type="hidden" id="yelog_site_word_count" value="15.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -229,6 +246,10 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>内网 光猫</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>adb</a>
             </li>
         
@@ -254,6 +275,15 @@
     </div>
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 网络 "
+           href="/2023/08/30/%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E5%BC%B1%E5%8F%A3%E4%BB%A4%E6%BC%8F%E6%B4%9E/"
+           data-tag="内网 光猫"
+           data-author="" >
+            <span class="post-title" title="电信光猫的弱口令漏洞">电信光猫的弱口令漏洞</span>
+            <span class="post-date" title="2023-08-30 20:07:42">2023/08/30</span>
+        </a>
         
         
         <a  class="全部文章 Android "
@@ -331,12 +361,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2023-08-29 22:06:54'>2023-08-28 16:30</time>
+            发布时间 : <time class="date" title='最后更新: 2023-08-30 20:14:28'>2023-08-28 16:30</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:947</span>
+        <span>字数:949</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -355,7 +385,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B"><span class="toc-text">过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3"><span class="toc-text">安全隐患</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E5%BB%BA%E8%AE%AE"><span class="toc-text">修复建议</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="toc-text">复现过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3"><span class="toc-text">安全隐患</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E5%BB%BA%E8%AE%AE"><span class="toc-text">修复建议</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -372,7 +402,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>中间人攻击（Man in the Middle Attack，简称“MITM攻击”）是一种间接的入侵攻击。这种攻击模式是通过各种技术手段，将受入侵者控制的一台计算机虚拟放置在网络连接中的两台通信计算机之间，这台计算机就称为“中间人”。<br>当主机之间进行通信时，通过封装数据包进而转发到目标主机上。转发的数据包中包括源IP地址、目标IP地址及MAC地址。但是当主机在自己的缓存表中找不到目标主机的地址时，它会发送ARP广播，在此过程中就可能被其他攻击者冒充目标主机。<br>一般情况下，ARP欺骗并不是使网络无法正常通信，而是通过冒充网关或其他主机使得到达网关或主机的数据流通过攻击主机进行转发。通过转发流量可以对流量进行控制和查看，从而控制流量或得到机密信息。</p>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><ol>
+<h2 id="复现过程"><a href="#复现过程" class="headerlink" title="复现过程"></a>复现过程</h2><ol>
 <li><p>使用Ettercap嗅探工具进行arp欺骗<br>将网关192.168.1.1设置为TARGET1(即攻击机器希望伪装的对象),将内网某些设备设置为TARGET2（即希望攻击的对象）。从而我们成为了网关与客户机间的中间人，客户机会误认为我们是网关，而网关会误认为我们就是客户机。最终我们可以截获客户机默认转发至网关的数据。<br><img src="https://p.inari.site/guest/23-08/28/64ec744231f56.png" alt="Ettercap嗅探"></p>
 <p>从上图可以看到我们可以截获客户机的DHCP请求报文、DHCP服务器响应的ACK确认报文、以及未加密的HTTP报文等信息。可以观察到明文传输的HTTP报文中用户名和密码均以泄露（图中泄露的为网关后台用户信息）。</p>
 <p><img src="https://p.inari.site/guest/23-08/28/64ec7486e49a2.png" alt="Mysql连接"><br>上图截获的为MYSQL数据库连接信息，但是MYSQL使用安全连接，使用了随机数种子及安全算法加密了连接传输信息。</p>
@@ -393,7 +423,10 @@
 <li>在使用移动设备进行WLAN安全检测时，可以看到arp检测项异常，说明遭受到了中间人攻击。<br><img src="https://p.inari.site/guest/23-08/28/64ec75c01e535.png" alt="移动设备WLAN安全检测"></li>
 </ul>
 <h2 id="安全隐患"><a href="#安全隐患" class="headerlink" title="安全隐患"></a>安全隐患</h2><p>通过arp欺骗，攻击者可以截获并篡改数据包，造成信息泄露及虚假信息传播。<br>其次，客户机原来直接通过网关上网，现在却转由通过被控主机转发上网。由于被控主机性能和程序性能的影响，这种转发并不会很流畅，因此就会导致用户上网速度变慢甚至频繁短线。另外ARP欺骗需要不停地发送ARP应答包，会造成网络拥塞。</p>
-<h2 id="修复建议"><a href="#修复建议" class="headerlink" title="修复建议"></a>修复建议</h2><p>对于网络设备而言，建议使用ARP防火墙，在路由器及交换机上做IP与MAC地址的静态绑定，使用ARP服务器定时广播网段内所有主机的正确IP&#x2F;MAC映射表。<br>对于客户机而言，建议使用arp命令绑定网关的IP&#x2F;MAC，及时升级客户端的操作系统和应用程序补丁，升级杀毒软件及病毒库。</p>
+<h2 id="修复建议"><a href="#修复建议" class="headerlink" title="修复建议"></a>修复建议</h2><ol>
+<li>对于网络设备而言，建议使用ARP防火墙，在路由器及交换机上做IP与MAC地址的静态绑定，使用ARP服务器定时广播网段内所有主机的正确IP&#x2F;MAC映射表。</li>
+<li>对于客户机而言，建议使用arp命令绑定网关的IP&#x2F;MAC，及时升级客户端的操作系统和应用程序补丁，升级杀毒软件及病毒库。</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。 </span>
@@ -404,10 +437,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>初探ARP中间人攻击</p>
-    <p><span class="copy-title">字数:</span><span class="post-count">947</span></p>
+    <p><span class="copy-title">字数:</span><span class="post-count">949</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="Scha1e">Scha1e</a></p>
     <p><span class="copy-title">发布时间:</span>2023-08-28, 16:30:28</p>
-    <p><span class="copy-title">最后更新:</span>2023-08-29, 22:06:54</p>
+    <p><span class="copy-title">最后更新:</span>2023-08-30, 20:14:28</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/08/28/%E5%88%9D%E6%8E%A2ARP%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB/" title="初探ARP中间人攻击">http://example.com/2023/08/28/%E5%88%9D%E6%8E%A2ARP%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
