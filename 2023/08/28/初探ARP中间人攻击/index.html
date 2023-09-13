@@ -6,24 +6,17 @@
   <meta name="keywords" content=" 内网 , ARP , MITM ">
   <meta name="description" content="初探ARP中间人攻击 | Scha1e的小站">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="简介电信的部分光猫后台存在越权访问漏洞，可以通过拼接url读取配置文件解包获取超管密码。此外也可直接使用该地区光猫设备型号的默认密码。 复现过程 访问网关访问电信天翼默认网关192.168.1.1，重定向至登录界面。  输入默认的超级管理员密码：nE7jA%5m  获得后台控制权  可以看到我们成功登录光猫后台，得知该型号为TEWA-1100E。 进一步，我们可以获取到内网内所有终端的接入信息，包">
+<meta name="description" content="浏览文件系统Linux文件系统Linux文件系统结构是从Unix文件结构演进过来的。在Linux文件系统中，通用的目录名用于 表示一些常见的功能。下表列出了一些较常见的Linux顶层虚拟目录名及其内容。    目录 用途    &#x2F; 虚拟目录的根目录。通常不会在这里存储文件   &#x2F;bin 二进制目录，存放许多用户级的GNU工具   &#x2F;boot 启动目录，存放启动文件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="电信光猫的弱口令漏洞">
-<meta property="og:url" content="http://example.com/2023/08/30/%E7%94%B5%E4%BF%A1%E5%85%89%E7%8C%AB%E7%9A%84%E5%BC%B1%E5%8F%A3%E4%BB%A4%E6%BC%8F%E6%B4%9E/index.html">
+<meta property="og:title" content="Linux文件相关操作">
+<meta property="og:url" content="http://example.com/2023/09/13/Linux%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Scha1e的小站">
-<meta property="og:description" content="简介电信的部分光猫后台存在越权访问漏洞，可以通过拼接url读取配置文件解包获取超管密码。此外也可直接使用该地区光猫设备型号的默认密码。 复现过程 访问网关访问电信天翼默认网关192.168.1.1，重定向至登录界面。  输入默认的超级管理员密码：nE7jA%5m  获得后台控制权  可以看到我们成功登录光猫后台，得知该型号为TEWA-1100E。 进一步，我们可以获取到内网内所有终端的接入信息，包">
+<meta property="og:description" content="浏览文件系统Linux文件系统Linux文件系统结构是从Unix文件结构演进过来的。在Linux文件系统中，通用的目录名用于 表示一些常见的功能。下表列出了一些较常见的Linux顶层虚拟目录名及其内容。    目录 用途    &#x2F; 虚拟目录的根目录。通常不会在这里存储文件   &#x2F;bin 二进制目录，存放许多用户级的GNU工具   &#x2F;boot 启动目录，存放启动文件">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2023/08/30/jMsyS9Yogw7PqG1.png">
-<meta property="og:image" content="https://s2.loli.net/2023/08/30/rG8p15NsnEkZVWF.png">
-<meta property="og:image" content="https://s2.loli.net/2023/08/30/AkbmO65dgIHESPT.png">
-<meta property="og:image" content="https://s2.loli.net/2023/08/30/frgoRvFPLdV6CSO.png">
-<meta property="og:image" content="https://s2.loli.net/2023/08/30/gVb9xPBCsov5NkS.png">
-<meta property="article:published_time" content="2023-08-30T12:07:42.000Z">
-<meta property="article:modified_time" content="2023-08-30T12:22:35.562Z">
+<meta property="article:published_time" content="2023-09-13T10:49:36.000Z">
+<meta property="article:modified_time" content="2023-09-13T10:49:50.095Z">
 <meta property="article:author" content="Scha1e">
-<meta property="article:tag" content="内网 光猫">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2023/08/30/jMsyS9Yogw7PqG1.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -134,7 +127,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(4)</small>
+                <small>(5)</small>
             
         </div>
     </li>
@@ -184,6 +177,21 @@
             
         
     
+        
+            
+                
+    <li>
+        <div data-rel="Linux">
+            
+            Linux
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -197,8 +205,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="4">
-<input type="hidden" id="yelog_site_word_count" value="15.2k">
+<input type="hidden" id="yelog_site_posts_number" value="5">
+<input type="hidden" id="yelog_site_word_count" value="21.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -275,6 +283,15 @@
     </div>
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 Linux "
+           href="/2023/09/13/Linux%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux文件相关操作">Linux文件相关操作</span>
+            <span class="post-date" title="2023-09-13 18:49:36">2023/09/13</span>
+        </a>
         
         
         <a  class="全部文章 网络 "
