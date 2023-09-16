@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>被动扫描之Maltego的使用</title>
+      <link href="/2023/09/16/%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F%E4%B9%8BMaltego%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+      <url>/2023/09/16/%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F%E4%B9%8BMaltego%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Maltego是一款十分令人惊喜的信息搜集工具需要联网使用。这款工具可以通过域名注册、搜索引擎、社交网络、电子邮件等各种渠道搜集信息。Kali Linux2中包含Maltego，这个工具需要注册后完成使用。</p><h2 id="使用过程"><a href="#使用过程" class="headerlink" title="使用过程"></a>使用过程</h2><p>首先新建一个Graph。将渗透测试的切入点放置到这个Graph中，在左侧的”Entity Palette”列表的”Infarastructure”分类中选择”Domain”，并将”Domain”拖拽到右侧的空白区中，即可添加一个节点。<br><img src="https://s2.loli.net/2023/09/16/pTlMgxBK8vawX1y.png"></p><p>在空白区将看到一个域对象，他就是我们这张信息搜集图中的根节点，其他的部分都会由它衍生。双击这个域对象，将其修改为想要扫描的域名。我们可以有多种调查的方式，这里选择一种最为常用的方式，也就是Maltego提供的自动化信息搜集。在选择了空白区的域对象之后，单击最左侧的”Run View”按钮，最为常用的是Footprint系列，其中后面的数字越大，调查的深度也就越大，这里以Footprint L1为例。<br><img src="https://s2.loli.net/2023/09/16/Naoh7iXE5RncHpj.png"><br>在这里搜集信息的过程中，我们可以找到hitwh.cloud的多个子域名，如<a href="http://www.hitwh.cloud/">www.hitwh.cloud</a>, oj.hitwh.cloud等，我们还知道这个域名对应的IP地址为152.136.211.124。如果想获得更多信息，如想知道152.136.211.0-152.136.211.255所处的地理位置，也可以在对应节点上面单击鼠标右键，然后在弹出的快捷菜单中选择”To Location[city, country]”，就可以对这个地址进行定位。<br><img src="https://s2.loli.net/2023/09/16/sEcNu9Bx23eLvWa.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Kali 被动扫描 Maltego </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux文件相关操作</title>
       <link href="/2023/09/13/Linux%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"/>
       <url>/2023/09/13/Linux%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</url>
