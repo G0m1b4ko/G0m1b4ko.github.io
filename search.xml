@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Tencent企业微信私有化版本agentinfo未授权访问漏洞</title>
+      <link href="/2023/09/18/Tencent%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E7%A7%81%E6%9C%89%E5%8C%96%E7%89%88%E6%9C%ACagentinfo%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/"/>
+      <url>/2023/09/18/Tencent%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E7%A7%81%E6%9C%89%E5%8C%96%E7%89%88%E6%9C%ACagentinfo%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%E6%BC%8F%E6%B4%9E/</url>
+      
+        <content type="html"><![CDATA[<h2 id="漏洞描述"><a href="#漏洞描述" class="headerlink" title="漏洞描述"></a>漏洞描述</h2><p>企业微信是腾讯微信团队为企业打造的专业办公管理工具。2023年8月，互联网上披露其相关接口存在未授权访问漏洞，攻击者可构造恶意请求（&#x2F;cgi-bin&#x2F;gateway&#x2F;agentinfo）获取企业微信secret等敏感信息，并组合调用相关API接口。该漏洞已被黑客武器化，用于大规模蠕虫传播、勒索挖矿，建议您立即关注并修复。</p><h2 id="漏洞影响"><a href="#漏洞影响" class="headerlink" title="漏洞影响"></a>漏洞影响</h2><p>2.5.x版本、2.6.930000版本以下</p><h2 id="复现过程"><a href="#复现过程" class="headerlink" title="复现过程"></a>复现过程</h2><ol><li><p>FOFA网络测绘</p><p>根据<code>app=&quot;Tencent-企业微信&quot;</code>查询所有资产，尝试某一个资产。</p></li></ol><p><img src="https://s2.loli.net/2023/09/18/QuAVFhfbH8M2B94.png"></p><ol start="2"><li><p>获取Secret、strcorpid</p><p>访问接口<code>/cgi-bin/gateway/agentinfo</code>。</p></li></ol><p><img src="https://s2.loli.net/2023/09/18/flpuZFI3z5bxvGK.png"><br>3. 获取token</p><p>   访问接口<code>/cgi-bin/gettoken?corpid=strcorpid&amp;corpsecret=Secret</code>。其中 <code>strcorpid、Secret</code> 为步骤2获取的值。</p><p><img src="https://s2.loli.net/2023/09/18/XBH1CRns627avjf.png"><br>4. 带入token请求功能接口</p><p>   举例：获取标签成员</p><p>   访问接口<code>/cgi-bin/user/list?access_token=access_token</code>。其中<code>access_token</code>为步骤3获取的值。</p><p><img src="https://s2.loli.net/2023/09/18/JTESLG9N6ryOABd.png"></p><ul><li>更多功能可以参考<a href="https://developer.work.weixin.qq.com/document/path/96067" title="获取成员ID列表 - 接口文档 - 企业微信开发者中心">获取成员ID列表 - 接口文档 - 企业微信开发者中心</a></li></ul><h2 id="修复建议"><a href="#修复建议" class="headerlink" title="修复建议"></a>修复建议</h2><p>1、升级至最新版本<br>2、设置其仅对可信地址开放。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 企业微信 未授权访问 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>被动扫描之Maltego的使用</title>
       <link href="/2023/09/16/%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F%E4%B9%8BMaltego%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
       <url>/2023/09/16/%E8%A2%AB%E5%8A%A8%E6%89%AB%E6%8F%8F%E4%B9%8BMaltego%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
